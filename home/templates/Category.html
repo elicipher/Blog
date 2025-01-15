@@ -1,0 +1,58 @@
+{% extends 'Base.html' %}
+{% block posts %}
+<section class="blog-section feat-stors sec-padding">
+	<div class="container">
+	  <div class="sec-title">
+		<h3>{{Category.title}}</h3>
+	  </div><!--sec-title end-->
+	
+	  <div class="blog-items">
+		
+		
+		<div class="row">
+		  {% for post in articles %}  
+		  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="blog-item">
+		  
+			  <div class="blog-img">
+			  
+				<img src="{{ post.image.url }}" width="219" height="218">
+
+				
+				
+			  </div><!--blog-img end-->
+			  <div class="blog-info">
+				<h3 class="post-title"><a href="{% url 'detail' post.sluge %}" title="">{{ post.title }}</a></h3>
+				<ul class="meta">
+				  <li>{{ post.jpublish }}</li>
+				  <li><i class="la la-eye"></i>2478</li>
+				  <li><a href="#" title=""><i class="la la-comment-o"></i>3</a></li>
+				</ul>
+			
+			  </div><!--blog-info end-->
+			
+			</div><!--blog-item end-->
+		
+	  </div><!--blog-items end-->
+	{% endfor %}
+	</div>
+  
+  
+  
+  </section><!--blog-section end-->
+
+  <section class="main-content pb-0">
+	
+  </section><!--main-content end-->
+{% endblock %}
+
+{% block btn_Cat %}
+{% if articles.has_previous %}
+<a class="btn btn-dark" href="{% url 'category' Category.sluge articles.previous_page_number %}" role="button"> ← Back</a>
+{% endif %}
+
+{% if articles.has_next %}
+<a class="btn btn-dark" href="{% url 'category' Category.sluge articles.next_page_number %}" role="button"> Next →</a>
+{% endif %}
+</div>
+{% endblock %}

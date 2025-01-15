@@ -1,0 +1,212 @@
+{% load static %}
+{% load thumbnail %}
+{% load  base_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+{% block title %}{% endblock %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/rtl.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/line-awesome.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/all.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/js/lib/slick/slick.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/js/lib/slick/slick-theme.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/color.css' %}">
+
+<style>
+
+.dropdown-toggle::after {
+    display: none !important; /* حذف فلش */
+}
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+</style>
+
+
+  
+
+
+
+</head>
+
+
+<body>
+
+
+	<div class="wrapper">
+		
+		<header>
+			<div class="container">
+				<div class="top-bar">
+					<div class="menu-btn">
+                        <a href="#" title="">
+                            <span class="bar1"></span>
+                            <span class="bar2"></span>
+                            <span class="bar3"></span>
+                        </a>
+                    </div><!--menu-btn end-->
+					<nav>
+
+						
+								
+							{% Category_Navbar %}
+							
+						
+						
+					</nav><!--navigation end-->
+					
+					<div class="rt-subs">
+						<a class="subscribe-btn" href="#" title=""><i class="la la-envelope-o"></i> Subscribe</a>
+						<a class="search-btn" href="#" title=""><i class="la la-search"></i></a>
+					</div><!--rt-subs end-->
+					<div class="clearfix"></div>
+				</div>
+				
+				<div class="bottom-header">
+					<div class="container">
+						<div class="logo">
+							<h2><a href="{% url 'home' %}" title="">EliCipher</a></h2>
+						</div><!-- logo end-->
+					</div>
+				</div><!--bottom-header end-->
+			</div>
+			
+		</header><!--HEADER END-->
+		
+		<div class="side-menu">
+			<a href="#" title="" class="close-sidemenu"><i class="la la-close"></i></a>
+			<ul class="navigation">
+				<li><a href="" title="">Home</a></li>
+				<li><a href="standar-post.html" title="">Standard Post</a></li>
+				<li><a href="about.html" title="">About</a></li>
+				<li><a href="contact.html" title="">Contact</a></li>
+			</ul><!--navigation end-->
+			
+			<div class="logo">
+				<h2><a href="#" title="">Heeney</a></h2>
+			</div><!-- logo end-->
+		</div><!--side-menu end-->
+		<!--postes : -->
+        {% block posts %}
+        {% endblock %}
+        
+        {% block details %}
+        {% endblock %}
+
+		
+		<div class="text-center mb-5">
+			<!-- {% block btn %}
+			‍‍‍‍‍‍‍{% endblock %} -->
+
+			{% block btn_Cat %}
+			{% endblock %}
+
+			{% block btn_home %}
+			‍‍‍‍‍‍‍{% endblock %}
+
+		<footer>
+			<div class="container">
+			
+				<div class="footer-content">
+					<div class="row">
+						<div class="col-lg-4 col-md-6 col-sm-6">
+							<div class="ft-logo">
+								<h1><a href="#" title="">Heeney</a></h1>
+							</div><!--ft-logo end-->
+						</div>
+						<div class="col-lg-4 col-md-6 col-sm-6">
+							<ul class="social-links">
+								<li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" title=""><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" title=""><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#" title=""><i class="fab fa-pinterest-p"></i></a></li>
+								<li><a href="#" title=""><i class="fab fa-facebook-messenger"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-lg-4 col-md-12">
+							<ul class="ft-links">
+								<li><a href="about.html" title="">About</a></li>
+								<li><a href="contact.html" title="">Contact</a></li>
+							</ul><!--ft-links end-->
+						</div>
+					</div>
+				</div><!--footer-content end-->
+			</div>
+		</footer><!--footer end-->
+
+
+		<section class="bottom-strip">
+			<div class="container">
+				<p>©2018 Heeney. All Rights Reserved.</p>
+			</div>
+		</section><!--bottom-strip end-->
+
+		<div class="search-page">
+			<form>
+				<div class="container">
+					<div class="form-field">
+						<input type="text" name="search" placeholder="Enter Your Keywords">
+						<button type="submit"><i class="la la-search"></i></button>
+					</div>
+				</div>
+			</form>
+			<a href="#" title="" class="close-search"><i class="la la-close"></i></a>
+		</div><!--SEARCH PAGE END-->
+
+
+
+	</div><!--wrapper end-->
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/lib/slick/slick.js"></script>
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdownToggles = document.querySelectorAll('.dropdown-item.dropdown-toggle');
+
+      dropdownToggles.forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const submenu = toggle.nextElementSibling;
+
+          if (submenu) {
+            submenu.classList.toggle('show');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
+<!-- Bootstrap CSS -->
+
+<!-- Bootstrap JS (به jQuery نیاز ندارد) -->

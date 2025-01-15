@@ -1,0 +1,17 @@
+
+  <ul class="dropdown-menu">
+    {% for category in Category.childeren.Active %}
+      <li class="dropdown">
+        {% if category %}
+        <a class="dropdown-item  dropdown-toggle " 
+           href="" 
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ category.title }}
+        </a>
+        {% endif %}
+        {% if category.childeren.Active %}
+              {% include 'partials/category_Loop.html'%}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
